@@ -1,0 +1,29 @@
+import java.util.Scanner;
+ 
+public class InputCalculator {
+    // Write your code here
+    public static void inputThenPrintSumAndAverage() {
+        Scanner sc = new Scanner(System.in);
+        int s=0; long avg=0;
+        int c=0;
+
+        while(true)
+        {
+            
+            String nextEntry = sc.nextLine();
+            try{
+                int validnum = Integer.parseInt(nextEntry);
+                s+=validnum;
+                c+=1;
+                double sd = (double)s;
+                double cd = (double)c; 
+                avg=Math.round(sd/cd);
+            }
+            catch(NumberFormatException nfe){
+                System.out.println("SUM = "+s+" AVG = "+avg);
+                break;
+            }
+        }
+        
+    }
+}

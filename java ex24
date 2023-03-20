@@ -1,0 +1,57 @@
+public class NumberToWords {
+    // write your code here
+
+    public static void numberToWords(int number)
+    {
+        
+        int x=getDigitCount(number);
+        int r=0;
+        String arr[]={"Zero","One","Two","Three","Four","Five","Six","Seven","Eight","Nine"};
+        if(x==-1)
+        System.out.println("Invalid Value");
+        else
+        {
+            r=reverse(number);
+            while(r!=0)
+            {
+               int last=r%10;
+               System.out.print(arr[last]+" ");
+               r/=10;
+               x--;
+            }
+            while(x!=0)
+            {
+                System.out.print("Zero"+" ");
+                x--;
+            }
+        }
+        //return 0;
+    }
+    
+    public static int reverse(int num)
+    {
+        int rev=0;
+        while(num!=0)
+        {
+            int x=num%10;
+            rev=rev*10+x;
+            num/=10;
+        }
+        return rev;
+    }
+    
+    public static int getDigitCount(int num)
+    {
+        if(num<0)
+        return -1;
+        if(num==0)
+        return 1;
+        int c=0;
+        while(num!=0)
+        {
+            num/=10;
+            c++;
+        }
+        return c;
+    }
+}

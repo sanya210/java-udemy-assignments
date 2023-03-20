@@ -1,0 +1,22 @@
+public class AreaCalculator {
+     public static double area(double radius)
+     {
+         if(radius<0)
+         return -1.0;
+         else
+         {
+             double a=Math.PI*radius*radius;
+             return a;
+         }
+     }
+     public static double area(double x, double y)
+     {
+         double a;
+         if(x<0 || y<0)
+         return -1;
+         else{
+         a=x*y;
+         return a;
+         }
+     }
+}

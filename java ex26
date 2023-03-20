@@ -1,0 +1,18 @@
+public class LargestPrime {
+    // write your code here
+    public static int getLargestPrime(int number)
+    {
+        if(number<0)
+        return -1;
+        int largestfactor=-1;
+        for(int f=2;f<=number;f++)
+        {
+            while(number%f==0)
+            {
+                largestfactor=f;
+                number=number/f;
+            }
+        }
+        return largestfactor;
+    }
+}
